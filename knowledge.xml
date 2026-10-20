@@ -1,0 +1,76 @@
+<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<LanguagePacks>
+		<LanguagePack ID="ENU" IsDefault="true">
+			<DisplayStrings>
+				<DisplayString ElementID="SCL.IIS.Website.Alerting.for.403">
+					<Name>SCL - IIS Website Alerting for 403</Name>
+					<Description>03/15/2023 - TFZ - Looks through the iis logs for instances of 403.xx</Description>
+				</DisplayString>
+			</DisplayStrings>
+			<KnowledgeArticles>
+				<KnowledgeArticle ElementID="SCL.IIS.Website.Alerting.for.403" Visible="true">
+					<MamlContent>
+						<maml:section xmlns:maml="http://schemas.microsoft.com/maml/2004/10">
+							<maml:title>Summary</maml:title>
+							<maml:para>This is a custom management pack developed to perform a 403 error check of the iislog files.</maml:para>
+							<maml:para></maml:para>
+							<maml:para>403.1 – Execute access forbidden</maml:para>
+							<maml:para>403.2 – Read access forbidden</maml:para>
+							<maml:para>403.3 – Write access forbidden</maml:para>
+							<maml:para>403.4 – SSL required</maml:para>
+							<maml:para>403.5 – SSL 128 required</maml:para>
+							<maml:para>403.6 – IP address rejected</maml:para>
+							<maml:para>403.7 – Client certificate required</maml:para>
+							<maml:para>403.8 – Site access denied</maml:para>
+							<maml:para>403.9 – Too many users</maml:para>
+							<maml:para>403.10 – Invalid configuration</maml:para>
+							<maml:para>403.11 – Password change</maml:para>
+							<maml:para>403.12 – Mapper denied access</maml:para>
+							<maml:para>403.13 – Client certificate revoked</maml:para>
+							<maml:para>403.14 – Directory listing denied</maml:para>
+							<maml:para>403.15 – Client Access Licenses exceeded</maml:para>
+							<maml:para>403.16 – Client certificate is untrusted or invalid</maml:para>
+							<maml:para>403.17 – Client certificate has expired or is not yet valid</maml:para>
+							<maml:para>403.18 – Cannot execute request from that application pool</maml:para>
+							<maml:para>403.19 – Cannot execute CGIs for the client in this application pool</maml:para>
+							<maml:para>403.20 – Passport logon failed</maml:para>
+							<maml:para>403.21 – Source access denied</maml:para>
+							<maml:para>403.22 – Infinite depth is denied</maml:para>
+							<maml:para>403.502 – Too many requests from the same client IP; Dynamic IP Restriction limit reached</maml:para>
+							<maml:para>403.503 – Rejected due to IP address restriction</maml:para>
+						</maml:section>
+					</MamlContent>
+				</KnowledgeArticle>
+				<KnowledgeArticle ElementID="SCL.IIS.403_Detected.LogFile.Alert.Rule" Visible="true">
+					<MamlContent>
+						<maml:section xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:ns0="http://tempuri.org/XMLSchema1.xsd" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2">
+							<maml:title>Summary</maml:title>
+							<maml:para>This rule will look at the *.log files in the provided path for a 403 error and generate an alert.</maml:para>
+						</maml:section>
+						<maml:section xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:ns0="http://tempuri.org/XMLSchema1.xsd" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2">
+							<maml:title>Configuration</maml:title>
+							<maml:para>Path: C:\inetpub\logs\LogFiles\W3SVC1File: *.log</maml:para>
+						</maml:section>
+						<maml:section xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:ns0="http://tempuri.org/XMLSchema1.xsd" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2">
+							<maml:title>Causes</maml:title>
+							<maml:para>No known cause for the event.</maml:para>
+						</maml:section>
+						<maml:section xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:ns0="http://tempuri.org/XMLSchema1.xsd" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2">
+							<maml:title>Resolutions</maml:title>
+							<maml:para>Generates an alert if the event is detected with the details of the computer, and line entry</maml:para>
+						</maml:section>
+						<maml:section xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:ns0="http://tempuri.org/XMLSchema1.xsd" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2">
+							<maml:title>Additional</maml:title>
+							<maml:para>No additional information.</maml:para>
+						</maml:section>
+						<maml:section xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:ns0="http://tempuri.org/XMLSchema1.xsd" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2">
+							<maml:title>External</maml:title>
+							<maml:para>Monitor text and CSV log files in System Center Operations Manager</maml:para>
+							<maml:para>https://learn.microsoft.com/en-us/troubleshoot/system-center/scom/monitor-text-and-csv-log-files</maml:para>
+						</maml:section>
+					</MamlContent>
+				</KnowledgeArticle>
+			</KnowledgeArticles>
+		</LanguagePack>
+	</LanguagePacks>
+</ManagementPackFragment>
