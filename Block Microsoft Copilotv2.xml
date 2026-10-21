@@ -1,0 +1,37 @@
+<RuleCollection Type="Appx" EnforcementMode="Enabled">
+  <FilePublisherRule
+      Id="a9e18c21-ff8f-43cf-b9fc-db40eed693ba"
+      Name="(Default Rule) All signed packaged apps"
+      Description="Allows members of the Everyone group to run packaged apps that are signed."
+      UserOrGroupSid="S-1-1-0"
+      Action="Allow">
+    <Conditions>
+      <FilePublisherCondition
+          PublisherName="*"
+          ProductName="*"
+          BinaryName="*">
+        <BinaryVersionRange
+            LowSection="0.0.0.0"
+            HighSection="*" />
+      </FilePublisherCondition>
+    </Conditions>
+  </FilePublisherRule>
+
+  <FilePublisherRule
+      Id="6859c10e-1761-42d5-920e-4c9e3817eb55"
+      Name="Block Microsoft Copilot"
+      Description="Prevents standalone Copilot app from launching"
+      UserOrGroupSid="S-1-1-0"
+      Action="Deny">
+    <Conditions>
+      <FilePublisherCondition
+          PublisherName="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+          ProductName="Microsoft.Copilot"
+          BinaryName="*">
+        <BinaryVersionRange
+            LowSection="0.0.0.0"
+            HighSection="*" />
+      </FilePublisherCondition>
+    </Conditions>
+  </FilePublisherRule>
+</RuleCollection>
